@@ -1,11 +1,10 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import {
   Container,
   Link,
   LinkItem,
-  LoginButton,
   Logo,
   LogoImg,
   LogoTitle,
@@ -14,8 +13,11 @@ import {
   WrapperLink,
 } from "./style";
 import logo from "../../assets/icons/logo.svg";
+import { Button } from "../Generic";
+import Filter from "../Filter";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Wrapper>
@@ -25,18 +27,22 @@ const Navbar = () => {
             <LogoTitle>Houzing</LogoTitle>
           </Logo>
           <WrapperLink>
-            {navbar.map((value, index) => {
+            {navbar.map(({ path, title, hidden }, index) => {
               return (
-                <LinkItem key={index}>
-                  <Link to={value.path}>{value.title}</Link>
-                </LinkItem>
+                !hidden && (
+                  <LinkItem key={index}>
+                    <Link to={path}>{title}</Link>
+                  </LinkItem>
+                )
               );
             })}
           </WrapperLink>
-          <LoginButton>Login</LoginButton>
+          <Button onClickProp={() => navigate("/signin")} type={"dark"}>
+            Login
+          </Button>
         </NavbarWrapper>
       </Wrapper>
-
+      <Filter />
       <Outlet />
     </Container>
   );

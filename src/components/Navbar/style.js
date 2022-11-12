@@ -78,24 +78,6 @@ const Link = styled(NavLink)`
   }
 `;
 
-const LoginButton = styled.button`
-  color: #fff;
-  border: 1px solid #ffffff;
-  background-color: var(--colorPrimary);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  width: 120px;
-  height: 44px;
-  border-radius: 2px;
-  cursor: pointer;
-  :active {
-    transform: scale(0.96);
-    transition: all 0.1s;
-  }
-`;
-
 export {
   Container,
   NavbarWrapper,
@@ -103,7 +85,6 @@ export {
   Wrapper,
   Logo,
   WrapperLink,
-  LoginButton,
   LogoImg,
   LogoTitle,
   LinkItem,
