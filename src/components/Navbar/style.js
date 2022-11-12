@@ -34,11 +34,10 @@ const WrapperLink = styled.div``;
 const LinkItem = styled.div`
   display: inline-block;
   position: relative;
-  .active{
-    font-size:18px;
-    color: red;
+  .active {
+    font-size: 18px;
     font-weight: 700;
-    transition:all 0.2s;
+    transition: all 0.2s;
   }
   .active::before {
     width: 100%;

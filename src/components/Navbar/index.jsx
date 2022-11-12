@@ -27,10 +27,8 @@ const Navbar = () => {
           <WrapperLink>
             {navbar.map((value, index) => {
               return (
-                <LinkItem  key={index}>
-                  <Link to={value.path}>
-                    {value.title}
-                  </Link>
+                <LinkItem key={index}>
+                  <Link to={value.path}>{value.title}</Link>
                 </LinkItem>
               );
             })}
