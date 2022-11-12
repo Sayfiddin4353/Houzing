@@ -36,6 +36,7 @@ const LinkItem = styled.div`
   position: relative;
   .active{
     font-size:18px;
+    color: red;
     font-weight: 700;
     transition:all 0.2s;
   }
