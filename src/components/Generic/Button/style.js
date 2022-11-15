@@ -38,15 +38,15 @@ const Container = styled.button`
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  min-width: 120px;
+  /* min-width: 120px; */
   cursor: pointer;
-  :active{
+  :active {
     opacity: 0.7;
     transform: scale(0.97);
   }
   width: ${({ width }) => (width ? `${width}px` : "128px")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
-  margin-left:${({margin})=>(margin?`${margin}px`:"0px")};
+
   ${getType};
 `;
 

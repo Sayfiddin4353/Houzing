@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "./style";
 
 const Input = ({
-  
   type,
   width,
   height,
@@ -11,7 +10,7 @@ const Input = ({
   value,
   name,
   onChangeProp,
-  icon
+  icon,
 }) => {
   return (
     <Container
