@@ -27,6 +27,8 @@ const LogoTitle = styled.span`
   margin-left: 12px;
   color: #fff;
   font-weight: 600;
+  font-size:16px;
+  cursor: pointer;
 `;
 
 const WrapperLink = styled.div``;
@@ -58,6 +60,9 @@ const Link = styled(NavLink)`
   line-height: 24px;
   text-decoration: none;
   transition: all 0.2s;
+  :hover{
+    color: #fff;
+  }
   ::before {
     content: "";
     position: absolute;

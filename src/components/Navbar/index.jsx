@@ -24,7 +24,7 @@ const Navbar = () => {
         <NavbarWrapper>
           <Logo>
             <LogoImg src={logo} />
-            <LogoTitle>Houzing</LogoTitle>
+            <LogoTitle onClick={()=>navigate("/home")}>Houzing</LogoTitle>
           </Logo>
           <WrapperLink>
             {navbar.map(({ path, title, hidden }, index) => {

@@ -1,15 +1,13 @@
-import React from 'react'
-import { Input } from '../Generic'
+import React from "react";
+import Carousel from "../Carousel";
+import { Container } from "./style";
 
 const Home = () => {
   return (
-    <div>
-    <h1>Home</h1>
-    <Input placeholder={"text"}/>
-     
-      
-    </div>
-  )
-}
+    <Container>
+      <Carousel />
+    </Container>
+  );
+};
 
-export default Home
+export default Home;
