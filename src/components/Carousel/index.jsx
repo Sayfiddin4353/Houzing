@@ -5,7 +5,9 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowWrapper,
+  Blur,
   Container,
+  Content,
   ImgCarousel,
 } from "./style";
 import img1 from "../../assets/images/slider1.png";
@@ -36,13 +38,19 @@ const GenCarousel = () => {
         <ImgCarousel src={img3} />
         <ImgCarousel src={img4} />
       </Carousel>
+      <Blur />
+    
       <ArrowContainer>
-      <ArrowWrapper>
-        <ArrowLeft data-name="left" onClick={onMove} />
-        <ArrowRight data-name="right" onClick={onMove} />{" "}
-      </ArrowWrapper>
+        <ArrowWrapper>
+          <ArrowLeft data-name="left" onClick={onMove} />
+          <ArrowRight data-name="right" onClick={onMove} />{" "}
+        </ArrowWrapper>
       </ArrowContainer>
-      
+      <Content>
+        <Content.title>Skyper Pool Partment</Content.title>
+        <Content.desc> 112 Glenwood Ave Hyde Park, Boston, MA </Content.desc>
+        <Content.price> $5,250/mo</Content.price>
+      </Content>
     </Container>
   );
 };
