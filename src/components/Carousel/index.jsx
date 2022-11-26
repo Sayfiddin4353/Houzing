@@ -47,9 +47,9 @@ const GenCarousel = () => {
         </ArrowWrapper>
       </ArrowContainer>
       <Content>
-        <Content.title>Skyper Pool Partment</Content.title>
-        <Content.desc> 112 Glenwood Ave Hyde Park, Boston, MA </Content.desc>
-        <Content.price> $5,250/mo</Content.price>
+        <Content.Title>Skyper Pool Partment</Content.Title>
+        <Content.Desc> 112 Glenwood Ave Hyde Park, Boston, MA </Content.Desc>
+        <Content.Price> $5,250/mo</Content.Price>
       </Content>
     </Container>
   );

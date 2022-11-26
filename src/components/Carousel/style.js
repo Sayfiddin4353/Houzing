@@ -71,7 +71,7 @@ const Content = styled.div`
   margin:0 auto;
 `;
 
-Content.title = styled.h1`
+Content.Title = styled.h1`
   font-style: normal;
   font-weight: 700;
   font-size: 44px;
@@ -81,14 +81,14 @@ Content.title = styled.h1`
   margin-bottom: 8px;
 `;
 
-Content.desc = styled.h2`
+Content.Desc = styled.h2`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
 `;
-Content.price = styled.h1`
+Content.Price = styled.h1`
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
