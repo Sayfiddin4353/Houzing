@@ -1,11 +1,15 @@
 import React from "react";
 import Carousel from "../Carousel";
+import Category from "../Category";
+
+
 import { Container } from "./style";
 
 const Home = () => {
   return (
     <Container>
-      <Carousel />
+      <Carousel />          
+      <Category/>
     </Container>
   );
 };

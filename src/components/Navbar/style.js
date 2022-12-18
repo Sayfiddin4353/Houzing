@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-
+import { ReactComponent as Nav } from "../../assets/icons/nav.svg";
+import { ReactComponent as login } from "../../assets/icons/login.svg";
 const Container = styled.div``;
 const Wrapper = styled.div`
   width: 100%;
@@ -16,7 +17,18 @@ const NavbarWrapper = styled.div`
   height: 64px;
   margin: 0 auto;
   padding: var(--padding);
+  @media only screen and (max-width: 650px) {
+    padding: 0px 20px;
+  }
 `;
+const NavIcon = styled(Nav)`
+  display: none;
+  @media only screen and (max-width: 770px) {
+    display: block;
+    cursor: pointer;
+  }
+`;
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -27,11 +39,15 @@ const LogoTitle = styled.span`
   margin-left: 12px;
   color: #fff;
   font-weight: 600;
-  font-size:16px;
+  font-size: 16px;
   cursor: pointer;
 `;
 
-const WrapperLink = styled.div``;
+const WrapperLink = styled.div`
+  @media only screen and (max-width: 770px) {
+    display: none;
+  }
+`;
 
 const LinkItem = styled.div`
   display: inline-block;
@@ -47,7 +63,7 @@ const LinkItem = styled.div`
   }
   .active::after {
     width: 100%;
-    background-color: #fff;
+    background-color:#fff;
   }
 `;
 
@@ -60,7 +76,7 @@ const Link = styled(NavLink)`
   line-height: 24px;
   text-decoration: none;
   transition: all 0.2s;
-  :hover{
+  :hover {
     color: #fff;
   }
   ::before {
@@ -83,14 +99,29 @@ const Link = styled(NavLink)`
   }
 `;
 
+const ButtonWrapper = styled.div`
+  @media only screen and (max-width: 770px) {
+    display: none;
+  }
+`;
+const LoginIcon = styled(login)`
+  display: none;
+  @media only screen and (max-width: 770px) {
+    display: block;
+  }
+`;
+
 export {
   Container,
   NavbarWrapper,
   Link,
   Wrapper,
+  NavIcon,
   Logo,
   WrapperLink,
   LogoImg,
   LogoTitle,
   LinkItem,
+  ButtonWrapper,
+  LoginIcon,
 };

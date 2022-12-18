@@ -10,6 +10,9 @@ const ArrowContainer = styled.div`
   position: absolute;
   top: 50%;
   width: 100%;
+  @media only screen and (max-width: 650px) {
+    display: none;
+  }
 `;
 const ArrowWrapper = styled.div`
   max-width: 1440px;
@@ -67,8 +70,8 @@ const Content = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  max-width:500px;
-  margin:0 auto;
+  max-width: 500px;
+  margin: 0 auto;
 `;
 
 Content.Title = styled.h1`
@@ -79,6 +82,9 @@ Content.Title = styled.h1`
   letter-spacing: -0.02em;
   color: #ffffff;
   margin-bottom: 8px;
+  @media only screen and (max-width:650px){
+    font-size:28px ;
+  }
 `;
 
 Content.Desc = styled.h2`
@@ -87,6 +93,9 @@ Content.Desc = styled.h2`
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
+  @media only screen and (max-width:650px){
+    font-size:14px ;
+  }
 `;
 Content.Price = styled.h1`
   font-style: normal;

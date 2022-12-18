@@ -2,13 +2,16 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import {
+  ButtonWrapper,
   Container,
   Link,
   LinkItem,
+  LoginIcon,
   Logo,
   LogoImg,
   LogoTitle,
   NavbarWrapper,
+  NavIcon,
   Wrapper,
   WrapperLink,
 } from "./style";
@@ -18,13 +21,15 @@ import Filter from "../Filter";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
   return (
     <Container>
       <Wrapper>
         <NavbarWrapper>
+          <NavIcon />
           <Logo>
             <LogoImg src={logo} />
-            <LogoTitle onClick={()=>navigate("/home")}>Houzing</LogoTitle>
+            <LogoTitle onClick={() => navigate("/home")}>Houzing</LogoTitle>
           </Logo>
           <WrapperLink>
             {navbar.map(({ path, title, hidden }, index) => {
@@ -37,9 +42,12 @@ const Navbar = () => {
               );
             })}
           </WrapperLink>
-          <Button onClickProp={() => navigate("/signin")} type={"dark"}>
-            Login
-          </Button>
+          <ButtonWrapper>
+            <Button onClickProp={() => navigate("/signin")} type={"dark"}>
+              Login
+            </Button>
+          </ButtonWrapper>
+          <LoginIcon />
         </NavbarWrapper>
       </Wrapper>
       <Filter />

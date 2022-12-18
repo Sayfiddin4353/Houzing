@@ -7,21 +7,21 @@ const { REACT_APP_BASE_URL: url } = process.env;
 
 const Properties = () => {
   const [data, setData] = useState([]);
-   const {search}=useLocation();
+  const { search } = useLocation();
 
   useEffect(() => {
     fetch(`${url}/houses/list${search}`)
       .then((res) => res.json())
       .then((res) => setData(res?.data || []));
   }, [search]);
+
   return (
     <Container>
       <Wrapper>
-      {data?.map((value) => {
-        return <HouseCard key={value.id} data={value} />;
-      })}
+        {data?.map((value) => {
+          return <HouseCard key={value.id} data={value} />;
+        })}
       </Wrapper>
-     
     </Container>
   );
 };

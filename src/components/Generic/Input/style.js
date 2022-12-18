@@ -39,8 +39,7 @@ const Container = styled.input`
   font-weight: 400;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   line-height: 20px;
-  color: #0d263b;
- 
+  color: #0d263b; 
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   padding-left: ${({ icon }) => (icon ? "45px" : "20px")};

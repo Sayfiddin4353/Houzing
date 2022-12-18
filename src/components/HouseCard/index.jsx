@@ -24,23 +24,20 @@ const HouseCard = ({ data = {} }) => {
     houseDetails,
     price,
     salePrice,
+    category,
   } = data;
+  
 
   return (
     <Container>
-      <Image
-        src={
-          attachments[0]?.imgPath === "" || attachments[0]?.imgPath === "string"
-            ? Noimg
-            : attachments[0]?.imgPath
-        }
-      />
+      <Image src={attachments?.[0].imgPath || Noimg} />
       <DescWrapper>
         <Title className="subtitle inline">
           {(city, country, description) || "No Information"}
         </Title>
         <DescPargraph className="desc_info">
-          {address || "Quincy St, Brooklyn, NY, USA"}
+          {address || "Quincy St, Brooklyn, NY, USA"}-
+          {category?.name || "Category"} {houseDetails?.room||0}-rooms
         </DescPargraph>
         <Details>
           <DetailsItem>
