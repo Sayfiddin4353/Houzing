@@ -50,7 +50,7 @@ const Filter = () => {
       (item) => item.id === Number(query.get("category_id"))
     );
     res?.name && setValueDefault(res?.name);
-  }, [location?.search, data]);
+  }, [(location?.search), data]);
 
   const menu = (
     <MenuWrapper>
