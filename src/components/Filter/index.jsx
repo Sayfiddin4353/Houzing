@@ -26,6 +26,7 @@ const Filter = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const query = useSearch();
+
   const onChange = ({ target: { value, name } }) => {
     navigate(`${location.pathname}${UseReplace(name, value)}`);
   };
@@ -50,7 +51,8 @@ const Filter = () => {
       (item) => item.id === Number(query.get("category_id"))
     );
     res?.name && setValueDefault(res?.name);
-  }, [(location?.search), data]);
+   
+  }, [query, data]);
 
   const menu = (
     <MenuWrapper>
@@ -103,7 +105,7 @@ const Filter = () => {
         >
           <SelectAnt.Option value={""}>Select Sort</SelectAnt.Option>
           <SelectAnt.Option value={"asc"}>O'suvchi</SelectAnt.Option>
-          <SelectAnt.Option value={"desc" }>Kamayuvchi</SelectAnt.Option>
+          <SelectAnt.Option value={"desc"}>Kamayuvchi</SelectAnt.Option>
         </SelectAnt>
         <SelectAnt
           labelInValue
@@ -111,7 +113,6 @@ const Filter = () => {
           onChange={onChangeCategory}
         >
           <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>
-
 
           {data?.map((item) => {
             return (
