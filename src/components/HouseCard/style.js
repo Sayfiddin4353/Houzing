@@ -10,9 +10,16 @@ const Container = styled.div`
   max-width: 380px;
   min-width: 330px;
   min-height: 429px;
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  :hover {
+    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+    transform: scale(0.98);
+  }
+
+  padding: ${({ gap }) => (gap ? `${gap}px` : "0px")};
+  border: 1px solid #e6e9ec;
+  cursor: pointer;
 `;
 
 const Image = styled.img`
@@ -28,9 +35,11 @@ const DescWrapper = styled.div`
 `;
 const Title = styled.h2`
   margin-bottom: 4px;
+  overflow: visible;
 `;
 const DescPargraph = styled.p`
   margin-bottom: 16px;
+  white-space: nowrap;
 `;
 const Details = styled.div`
   display: flex;
