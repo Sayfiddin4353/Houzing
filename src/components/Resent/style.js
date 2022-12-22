@@ -1,31 +1,34 @@
 import styled from "styled-components";
 import { ReactComponent as leftarrow } from "../../assets/icons/leftarrowrecomm.svg";
 import { ReactComponent as rightarrow } from "../../assets/icons/rightarrowrecomm.svg";
+
 const Container = styled.div`
   position: relative;
   width: 100%;
 `;
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 96px 130px 136px;
-  .slick-dots{
-  bottom: -50px !important;
-}
-`;
-Wrapper.Title=styled.h1`
-text-align: center;
+const Wrapper=styled.div`
+width: 100%;  
+max-width: 1440px;
+margin: 0 auto;
+padding: 96px 130px 88px; 
 `
-Wrapper.Desc=styled.p`
-text-align: center;
+Container.Title=styled.h1`
+ text-align: center;
+`
+Container.Desc=styled.p`
+text-align:center;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #696969;
 margin-bottom:32px !important;
-
 `
 const ArrowContainer = styled.div`
   position: absolute;
   top: 50%;
   width: 100%;
+
   @media only screen and (max-width: 650px) {
     display: none;
   }
@@ -43,7 +46,7 @@ const ArrowLeft = styled(leftarrow)`
   border-radius: 50%;
   padding: 15px;
   color: black;
-  background: #fff;
+  background:#fff ;
   box-shadow: 0px 10px 50px rgba(13, 38, 59, 0.5);
   cursor: pointer;
   :active {
@@ -56,7 +59,7 @@ const ArrowRight = styled(rightarrow)`
   margin-right: 32px;
   border-radius: 50%;
   padding: 15px;
-  background: #fff;
+  background:#fff;
   box-shadow: 0px 10px 50px rgba(13, 38, 59, 0.5);
 
   cursor: pointer;
@@ -65,11 +68,4 @@ const ArrowRight = styled(rightarrow)`
   }
 `;
 
-export {
-  Container,
-  ArrowContainer,
-  ArrowWrapper,
-  ArrowLeft,
-  ArrowRight,
-  Wrapper,
-};
+export { Container,Wrapper,ArrowContainer,ArrowWrapper,ArrowLeft,ArrowRight };

@@ -18,6 +18,7 @@ import {
 import logo from "../../assets/icons/logo.svg";
 import { Button } from "../Generic";
 import Filter from "../Filter";
+import Footer from "../Footer";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ const Navbar = () => {
       </Wrapper>
       <Filter />
       <Outlet />
+      <Footer/>
     </Container>
   );
 };
