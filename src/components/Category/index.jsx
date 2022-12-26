@@ -48,8 +48,10 @@ const Category = () => {
     <Container>
       <Wrapper>
         <Wrapper.Title className={"title"}>Category</Wrapper.Title>
-        <Wrapper.Desc className={"info"}>Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</Wrapper.Desc>
-        <Slider {...settings} ref={sliderRef} >
+        <Wrapper.Desc className={"info"}>
+          Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+        </Wrapper.Desc>
+        <Slider {...settings} ref={sliderRef}>
           {data?.map((item) => {
             return (
               <CategoryCard

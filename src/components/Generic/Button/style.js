@@ -29,6 +29,12 @@ const getType = ({ type }) => {
   }
 };
 
+const getWidth=({width})=>{
+  if(!width) return "128px"
+  else if(`${width}`.includes("%")) return `100%`
+  else return `${width}px`
+}
+
 const Container = styled.button`
   display: flex;
   align-items: center;
@@ -44,7 +50,7 @@ const Container = styled.button`
     opacity: 0.7;
     transform: scale(0.97);
   }
-  width: ${({ width }) => (width ? `${width}px` : "128px")};
+  width: ${getWidth};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
 
   ${getType};
