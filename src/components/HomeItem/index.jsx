@@ -29,7 +29,7 @@ import {
   UserName,
   Wrapper,
 } from "./style";
-import Yandex from "../Generic/Yandex";
+// import Yandex from "../Generic/Yandex";
 import Recommended from "../Recommended";
 const { REACT_APP_BASE_URL: url } = process.env;
 
@@ -181,7 +181,7 @@ function HomeItem() {
               </Info>
             </LocationBox.Info>
             <Map>
-              <Yandex />
+              {/* <Yandex /> */}
             </Map>
           </LocationBox>
           <Location.Bottom />
