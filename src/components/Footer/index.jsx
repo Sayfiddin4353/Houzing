@@ -74,8 +74,9 @@ function Footer() {
           <FooterContainer.Logo />
           <FooterContainer.Title>Houzing</FooterContainer.Title>
         </Logo>
-          <FooterContainer.Right>Copyright &copy; 2021 CreativeLayers. All Right Reserved.</FooterContainer.Right>
-
+        <FooterContainer.Right>
+          Copyright &copy; 2021 CreativeLayers. All Right Reserved.
+        </FooterContainer.Right>
       </FooterContainer>
     </Container>
   );

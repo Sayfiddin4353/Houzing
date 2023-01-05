@@ -43,7 +43,7 @@ const Container = styled.input`
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   padding-left: ${({ icon }) => (icon ? "45px" : "20px")};
- 
+  margin-bottom:${({mb})=>mb?`${mb}px`:"0px"};
   /* ${getType}; */
   ::placeholder {
     font-style: normal;

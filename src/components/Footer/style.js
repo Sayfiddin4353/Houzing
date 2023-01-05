@@ -20,6 +20,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  @media only screen and (max-width: 1028px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media only screen and (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 Wrapper.Card = styled.div``;
 
@@ -62,11 +71,9 @@ const Button = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color:#30395ade ;
-    
+    background-color: #30395ade;
   }
 
- 
   :active {
     transform: scale(0.95);
   }
@@ -75,20 +82,25 @@ const Icon = styled.div``;
 Icon.Logo = styled(logofooter)``;
 Icon.Phone = styled(phone)``;
 Icon.Mail = styled(mail)``;
-Icon.Facebook = styled(facebook)`
-`;
+Icon.Facebook = styled(facebook)``;
 Icon.Twitter = styled(twitter)``;
 Icon.Instagram = styled(instagram)``;
 Icon.Linkedin = styled(linkedin)``;
 const FooterContainer = styled.div`
   padding: 0px 130px;
   width: 100%;
-  height: 68px;
+  min-height: 68px;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 940px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Logo = styled.div`
   display: flex;
@@ -110,6 +122,9 @@ FooterContainer.Right = styled.h1`
   line-height: 20px;
   color: #ffffff;
   margin-bottom: 0px;
+  @media only screen and (max-width: 940px) {
+  
+  }
 `;
 
 export {

@@ -11,6 +11,7 @@ import Slider from "react-slick";
 
 import HouseCard from "../HouseCard";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 const { REACT_APP_BASE_URL: url } = process.env;
 const settings = {
   className: "center",
@@ -27,7 +28,7 @@ const settings = {
 
 const Resent = () => {
   const [data, setData] = useState([]);
-
+  const navigate=useNavigate();
   useEffect(() => {
     fetch(`${url}/houses/list`)
       .then((res) => res.json())
@@ -53,7 +54,7 @@ const Resent = () => {
         </Container.Desc>
         <Slider {...settings} ref={silderRef}>
           {data?.map((item) => {
-            return <HouseCard gap={10} key={item.id} data={item} />;
+            return <HouseCard gap={10} key={item.id} data={item} onClick={()=>navigate(`/properties/${item.id}`)} />;
           })}
         </Slider>
       </Wrapper>

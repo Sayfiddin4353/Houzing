@@ -15,6 +15,7 @@ const Input = forwardRef(
       onChangeProp,
       icon,
       fontSize,
+      mb
     },
     ref
   ) => {
@@ -33,6 +34,7 @@ const Input = forwardRef(
           name={name}
           fontSize={fontSize}
           onChange={onChangeProp}
+          mb={mb}
         ></Container>
       </Wrapper>
     );

@@ -14,7 +14,7 @@ import {
 } from "./style";
 import Noimg from "../../assets/images/noimg.png";
 
-const HouseCard = ({ data = {},gap,onClick }) => {
+const HouseCard = ({ data = {}, gap, onClick }) => {
   const {
     address,
     attachments,
@@ -26,18 +26,17 @@ const HouseCard = ({ data = {},gap,onClick }) => {
     salePrice,
     category,
   } = data;
-  
 
   return (
     <Container gap={gap} onClick={onClick}>
-      <Image src={attachments?.[0].imgPath || Noimg} />
+      <Image src={attachments?.[0]?.imgPath || Noimg} />
       <DescWrapper>
         <Title className="subtitle inline">
           {(city, country, description) || "No Information"}
         </Title>
         <DescPargraph className="desc_info">
           {address || "Quincy St, Brooklyn, NY, USA"}-
-          {category?.name || "Category"} {houseDetails?.room||0}-rooms
+          {category?.name || "Category"} {houseDetails?.room || 0}-rooms
         </DescPargraph>
         <Details>
           <DetailsItem>

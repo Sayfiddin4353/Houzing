@@ -52,7 +52,6 @@ const Container = styled.button`
   }
   width: ${getWidth};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
-
   ${getType};
 `;
 

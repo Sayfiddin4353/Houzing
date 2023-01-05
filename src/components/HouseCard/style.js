@@ -76,7 +76,6 @@ FooterLeft.DescPrice = styled.p`
 `;
 const FooterRight = styled.div`
   width: 70px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
