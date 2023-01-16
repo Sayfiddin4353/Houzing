@@ -1,14 +1,13 @@
 import React from "react";
-import { Container, Form, InfoError, Wrapper } from "./style";
+import { Container, Form, Wrapper } from "./style";
 import { Button, Input } from "../Generic";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 
-const Signin = () => {
+const Signup = () => {
   const [body, setBody] = useState({});
-  const [error, setError] = useState(false);
-  const [isLoad, setisLoad] = useState(false);
+
   const navigate = useNavigate();
   const onChangeSign = ({ target: { value, placeholder } }) => {
     setBody({
@@ -22,8 +21,7 @@ const Signin = () => {
   };
 
   const onSelect = () => {
-    setisLoad(true);
-    fetch("https://houzing-app.herokuapp.com/api/public/auth/login", {
+    fetch("https://houzing-app.herokuapp.com/api/public/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,40 +30,33 @@ const Signin = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        setisLoad(false);
-        if (res?.authenticationToken) {
-          navigate("/home");
-          success();
-          localStorage.setItem("token", res?.authenticationToken);
-        } else {
-          setError(true);
-        }
-      })
-      .catch((err) => {
-        setError(true);
-        setisLoad(false);
+        navigate("/signin");
+        success();
       });
   };
   return (
     <Container>
       <Wrapper>
-        <Wrapper.Title>Sign in</Wrapper.Title>
+        <Wrapper.Title>Sign Up</Wrapper.Title>
         <Form>
+          <Input onChangeProp={onChangeSign} placeholder="email" />
           <Input
             onChangeProp={onChangeSign}
-            placeholder="email"
-            type="email"
-            onFocus={() => setError(false)}
+            placeholder="firstname"
+            type="text"
+          />
+          <Input
+            onChangeProp={onChangeSign}
+            placeholder="lastname"
+            type="text"
           />
           <Input
             onChangeProp={onChangeSign}
             placeholder="password"
             type="password"
-            onFocus={() => setError(false)}
           />
-          {error && <InfoError>Email or password is not correct</InfoError>}
           <Button onClickProp={onSelect} width={"100%"}>
-            {isLoad ? "waiting..." : "Login"}
+            Registration
           </Button>
         </Form>
       </Wrapper>
@@ -73,4 +64,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;

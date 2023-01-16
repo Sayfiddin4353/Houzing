@@ -10,6 +10,7 @@ const Container = styled.div`
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
   border-radius: 3px;
+  cursor: pointer;
 `;
 const Blur = styled.div`
   position: absolute;

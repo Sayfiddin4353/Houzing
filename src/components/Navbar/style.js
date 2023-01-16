@@ -63,7 +63,7 @@ const LinkItem = styled.div`
   }
   .active::after {
     width: 100%;
-    background-color:#fff;
+    background-color: #fff;
   }
 `;
 
@@ -111,7 +111,29 @@ const LoginIcon = styled(login)`
   }
 `;
 
+const DropdownContainer = styled.div`
+width: 177px;
+height: 170px;
+  background: #ffff;
+  padding: 20px;
+  box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
+    0px 7px 46px rgba(0, 0, 0, 0.06), 0px 8px 15px rgba(0, 0, 0, 0.06);
+`;
+DropdownContainer.Item = styled.div`
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  cursor: pointer;
+  :active {
+    transform: scale(0.95);
+  }
+`;
+
 export {
+  DropdownContainer,
   Container,
   NavbarWrapper,
   Link,

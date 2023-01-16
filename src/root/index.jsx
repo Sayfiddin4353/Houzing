@@ -8,10 +8,10 @@ const Root = () => {
     <Routes>
       <Route element={<Navbar />}>
         {navbar.map(({ id, path, element }) => {
-          return <Route key={id} path={path} element={element} />;
+         return <Route key={id} path={path} element={element} />;
         })}
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="*" element={<h1>Not Found Page</h1>} />
+        <Route path="*" element={<h1> 404 Not Found Page</h1>} />
       </Route>
     </Routes>
   );

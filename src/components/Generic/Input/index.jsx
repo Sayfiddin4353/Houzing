@@ -15,7 +15,8 @@ const Input = forwardRef(
       onChangeProp,
       icon,
       fontSize,
-      mb
+      mb,
+      onFocus
     },
     ref
   ) => {
@@ -23,6 +24,7 @@ const Input = forwardRef(
       <Wrapper>
         <Icon>{icon}</Icon>
         <Container
+        onFocus={onFocus}
           ref={ref}
           icon={icon}
           type={type}

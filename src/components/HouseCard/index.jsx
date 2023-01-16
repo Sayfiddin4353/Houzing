@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Container,
   DescPargraph,
@@ -13,9 +13,13 @@ import {
   Title,
 } from "./style";
 import Noimg from "../../assets/images/noimg.png";
+import { message } from "antd";
+import { PropertiesContext } from "../../context/properties";
 
+const { REACT_APP_BASE_URL: url } = process.env;
 const HouseCard = ({ data = {}, gap, onClick }) => {
   const {
+    id,
     address,
     attachments,
     city,
@@ -25,8 +29,25 @@ const HouseCard = ({ data = {}, gap, onClick }) => {
     price,
     salePrice,
     category,
+    favorite,
   } = data;
+  const [state] = useContext(PropertiesContext);
 
+  const onFavourite = (e) => {
+    e.stopPropagation();
+    fetch(`${url}/houses/addFavourite/${id}?favourite=${!favorite}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (favorite) res?.success && message.warning("this home is disliked");
+        else res?.success && message.info("this home is liked");
+        state.refetch && state.refetch();
+      });
+  };
   return (
     <Container gap={gap} onClick={onClick}>
       <Image src={attachments?.[0]?.imgPath || Noimg} />
@@ -76,7 +97,7 @@ const HouseCard = ({ data = {}, gap, onClick }) => {
         </FooterLeft>
         <FooterRight>
           <Icons.Resize />
-          <Icons.Love />
+          <Icons.Love onClick={onFavourite} favorite={favorite} />
         </FooterRight>
       </FooterWrapper>
     </Container>

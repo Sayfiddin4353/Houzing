@@ -54,7 +54,19 @@ Icons.Bed = styled(bed)``;
 Icons.Bath = styled(bath)``;
 Icons.Car = styled(car)``;
 Icons.Ruler = styled(ruler)``;
-Icons.Love = styled(love)``;
+Icons.Love = styled(love)`
+  background-color: ${({ favorite }) => (favorite ? "red" : "#F6F8F9")};
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  border-radius: 60%;
+  :active{
+    transform: scale(0.9);
+  }
+  path {
+    fill: ${({ favorite }) => (favorite ? "white" : "#696969")};
+  }
+`;
 Icons.Resize = styled(resize)``;
 Icons.Desc = styled.p`
   margin-bottom: 0px;

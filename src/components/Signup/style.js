@@ -35,12 +35,4 @@ const Form = styled.div`
   gap: 40px;
 `;
 
-const InfoError=styled.h1`
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 28px;
-color: red;
-`
-
-export { Container, Wrapper, Form,InfoError };
+export { Container, Wrapper, Form };

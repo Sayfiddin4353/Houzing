@@ -1,9 +1,11 @@
 import React from "react";
-import SigninPage from "../pages/SigninPage";
+import RegisterPage from "../pages/RegisterPage";
 const PropertiesPage = React.lazy(() => import("../pages/PropertiesPage"));
 const HomePage = React.lazy(() => import("../pages/HomePage"));
 const HomeItemPage = React.lazy(() => import("../pages/HomeItemPage"));
-
+const MyProfilePage = React.lazy(() => import("../pages/MyProfilePage"));
+const MyPropertiesPage = React.lazy(() => import("../pages/MyPropertiesPage"));
+const FavouritePage = React.lazy(() => import("../pages/FavouritePage"));
 export const navbar = [
   {
     id: 1,
@@ -32,7 +34,7 @@ export const navbar = [
   {
     id: 3,
     path: "/signin",
-    element: <SigninPage />,
+    element: <RegisterPage />,
     title: "SignIn",
     private: false,
     hidden: true,
@@ -46,6 +48,42 @@ export const navbar = [
       </React.Suspense>
     ),
     title: "HouseItem",
+    private: false,
+    hidden: true,
+  },
+  {
+    id: 5,
+    path: "/myprofile",
+    element: (
+      <React.Suspense fallback={<>Loading...</>}>
+        <MyProfilePage />
+      </React.Suspense>
+    ),
+    title:"My Profile",
+    private: false,
+    hidden: false,
+  },
+  {
+    id: 6,
+    path: "/myproperties",
+    element: (
+      <React.Suspense fallback={<>Loading...</>}>
+        <MyPropertiesPage />
+      </React.Suspense>
+    ),
+    title:"My Properties",
+    private: false,
+    hidden: true,
+  },
+  {
+    id: 7,
+    path: "/myfavourits",
+    element: (
+      <React.Suspense fallback={<>Loading...</>}>
+        <FavouritePage />
+      </React.Suspense>
+    ),
+    title:"Favourite",
     private: false,
     hidden: true,
   },

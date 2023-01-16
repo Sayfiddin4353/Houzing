@@ -16,6 +16,7 @@ import {
   IconCard,
   IconContainer,
   Icons,
+  ImgContent,
   Info,
   LeftContent,
   Location,
@@ -23,6 +24,8 @@ import {
   Map,
   Message,
   PriceDesc,
+  ProductImgLeft,
+  ProductImgRight,
   RightContent,
   Title,
   UserImage,
@@ -31,6 +34,7 @@ import {
 } from "./style";
 import Yandex from "../Generic/Yandex";
 import Recommended from "../Recommended";
+import Noimg from "../../assets/images/noimg.png";
 const { REACT_APP_BASE_URL: url } = process.env;
 
 function HomeItem() {
@@ -44,15 +48,42 @@ function HomeItem() {
         .then((res) => {
           setData(res?.data || {});
           window.scroll({
-            top:0,
-            behavior:"smooth"
-          })
+            top: 0,
+            behavior: "smooth",
+          });
         });
   }, [params?.id]);
-
+  console.log(data, "houseitem");
   return (
     <Container>
       <Wrapper>
+        <ImgContent>
+          <ImgContent.Left>
+            <ProductImgLeft src={data?.attachments?.[0]?.imgPath || Noimg} />
+          </ImgContent.Left>
+          <ImgContent.Right>
+            <ProductImgRight>
+              <ProductImgRight.Img
+                src={data?.attachments?.[0]?.imgPath || Noimg}
+              />
+            </ProductImgRight>
+            <ProductImgRight>
+              <ProductImgRight.Img
+                src={data?.attachments?.[0]?.imgPath || Noimg}
+              />
+            </ProductImgRight>
+            <ProductImgRight>
+              <ProductImgRight.Img
+                src={data?.attachments?.[0]?.imgPath || Noimg}
+              />
+            </ProductImgRight>
+            <ProductImgRight>
+              <ProductImgRight.Img
+                src={data?.attachments?.[0]?.imgPath || Noimg}
+              />
+            </ProductImgRight>
+          </ImgContent.Right>
+        </ImgContent>
         <Content>
           <LeftContent>
             <LeftContent.Box>

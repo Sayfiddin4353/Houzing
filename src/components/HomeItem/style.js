@@ -16,6 +16,38 @@ const Wrapper = styled.div`
   max-width: 1440px;
   padding: 24px 130px 96px 130px;
 `;
+const ImgContent = styled.div`
+  margin-bottom: 24px;
+  display: flex;
+  gap: 20px;
+`;
+ImgContent.Left = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 580px;
+  max-height: 400px;
+`;
+const ProductImgLeft = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 580px;
+  max-height: 400px;
+`;
+ImgContent.Right = styled.div`
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap: 20px;
+`;
+const ProductImgRight=styled.div`
+width: 100%;
+max-width: 280px;
+height: 100%;
+max-height: 190px;
+`
+ProductImgRight.Img=styled.img`
+width: 100%;
+height: 100%;
+`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
@@ -214,20 +246,20 @@ Message.Desc = styled.p`
 `;
 
 const Location = styled.div``;
-Location.Top=styled.div`
-background: #E6E9EC;
-width: 100%;
-max-width: 880px;
-height: 2px;
-margin-bottom:48px;
-`
-Location.Bottom=styled.div`
-background: #E6E9EC;
-width: 100%;
-max-width: 880px;
-height: 2px;
-margin-bottom:48px ;
-`
+Location.Top = styled.div`
+  background: #e6e9ec;
+  width: 100%;
+  max-width: 880px;
+  height: 2px;
+  margin-bottom: 48px;
+`;
+Location.Bottom = styled.div`
+  background: #e6e9ec;
+  width: 100%;
+  max-width: 880px;
+  height: 2px;
+  margin-bottom: 48px;
+`;
 Location.Title = styled.h1`
   font-style: normal;
   font-weight: 600;
@@ -244,12 +276,12 @@ LocationBox.Info = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;  
+  margin-bottom: 24px;
 `;
 const Info = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;  
+  gap: 8px;
 `;
 Info.Title = styled.div`
   font-style: normal;
@@ -265,11 +297,13 @@ Info.Desc = styled.div`
   line-height: 20px;
   color: #696969;
 `;
-const Map=styled.div`
-margin-bottom: 48px;
-`
+const Map = styled.div`
+  margin-bottom: 48px;
+`;
 
 export {
+  ProductImgRight,
+  ProductImgLeft,
   Map,
   Info,
   LocationBox,
@@ -293,4 +327,5 @@ export {
   DescInfo,
   UserImage,
   Message,
+  ImgContent,
 };

@@ -6,18 +6,17 @@ import Resent from "../Resent";
 import Vermont from "../Vermont";
 import WhyChoose from "../WhyChoose";
 
-
 import { Container } from "./style";
 
 const Home = () => {
   return (
     <Container>
-      <Carousel />   
-      <Recommended/> 
-      <WhyChoose/>      
-      <Category/>
-      <Vermont/>
-      <Resent/>
+      <Carousel />
+      <Recommended />
+      <WhyChoose />
+      <Category />
+      <Vermont />
+      <Resent />
     </Container>
   );
 };
