@@ -15,7 +15,7 @@ import { Button, Input } from "../Generic";
 import { useFormik } from "formik";
 import { Checkbox } from "antd";
 import TextArea from "antd/lib/input/TextArea";
-import {  useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AddProperties = () => {
   const { REACT_APP_BASE_URL: url } = process.env;
@@ -28,7 +28,7 @@ const AddProperties = () => {
     componentsDto: {},
     homeAmenitiesDto: {},
     status: true,
-    categoryId:1,
+    categoryId: 1,
     locations: {
       latitude: 0,
       longitude: 0,
@@ -36,12 +36,12 @@ const AddProperties = () => {
   });
   const navigate = useNavigate();
   const { id } = useParams();
-  
+
   useEffect(() => {
     fetch(`${url}/categories/list`)
       .then((res) => res.json())
       .then((res) => setCategory(res?.data || []));
-  }, [url]);
+  }, []);
 
   useEffect(() => {
     
@@ -55,14 +55,14 @@ const AddProperties = () => {
           setImgs(res?.data?.attachments);
           setInitial(res?.data || {});
         });
-  }, [url,id]);
+  }, []);
 
   const formik = useFormik({
     initialValues: initial,
     enableReinitialize: true,
     onSubmit: (values) => {
       console.log(values);
-      fetch(id?`${url}/houses/${id}`:`${url}/houses`, {
+      fetch(id ? `${url}/houses/${id}` : `${url}/houses`, {
         method: id ? "PUT" : "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
