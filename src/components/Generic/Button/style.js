@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const getType = ({ type }) => {
   switch (type) {
     case "dark":
@@ -29,11 +30,11 @@ const getType = ({ type }) => {
   }
 };
 
-const getWidth=({width})=>{
-  if(!width) return "128px"
-  else if(`${width}`.includes("%")) return `100%`
-  else return `${width}px`
-}
+const getWidth = ({ width }) => {
+  if (!width) return "128px";
+  else if (`${width}`.includes("%")) return `100%`;
+  else return `${width}px`;
+};
 
 const Container = styled.button`
   display: flex;
@@ -44,11 +45,12 @@ const Container = styled.button`
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  /* min-width: 120px; */
-  cursor: pointer;
+  opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+
   :active {
-    opacity: 0.7;
-    transform: scale(0.97);
+    opacity: ${({ disabled }) => (disabled ? 0.3 : 0.7)};
+    transform: ${({ disabled }) => (disabled ? `scale(${1})` : `scale(${0.97})`)};
   }
   width: ${getWidth};
   height: ${({ height }) => (height ? `${height}px` : "44px")};

@@ -7,8 +7,8 @@ import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/bigsmall.svg";
 const Container = styled.div`
   width: 100%;
-  max-width: 380px;
-  min-width: 330px;
+  height: 100%;
+  max-width: 380px; 
   min-height: 429px;
   :hover {
     filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))

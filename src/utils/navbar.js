@@ -1,5 +1,6 @@
 import React from "react";
 import RegisterPage from "../pages/RegisterPage";
+const AddPropertiesPage=React.lazy(()=>import("../pages/AddPropertiesPage"))
 const PropertiesPage = React.lazy(() => import("../pages/PropertiesPage"));
 const HomePage = React.lazy(() => import("../pages/HomePage"));
 const HomeItemPage = React.lazy(() => import("../pages/HomeItemPage"));
@@ -61,7 +62,7 @@ export const navbar = [
     ),
     title:"My Profile",
     private: false,
-    hidden: false,
+    hidden: true,
   },
   {
     id: 6,
@@ -87,4 +88,26 @@ export const navbar = [
     private: false,
     hidden: true,
   },
+  {
+    id:8,
+    path:'/myproperties/addproperties',
+    element:(
+      <React.Suspense fallback={<>Loading...</>}>
+        <AddPropertiesPage/>
+      </React.Suspense>
+    ),
+    private:false,
+    hidden:true
+  },
+  {
+    id:9,
+    path:'/myproperties/edithouse/:id',
+    element:(
+      <React.Suspense fallback={<>Loading...</>}>
+        <AddPropertiesPage/>
+      </React.Suspense>
+    ),
+    private:false,
+    hidden:true
+  }
 ];

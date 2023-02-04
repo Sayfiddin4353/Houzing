@@ -53,7 +53,7 @@ function HomeItem() {
           });
         });
   }, [params?.id]);
-  console.log(data, "houseitem");
+  
   return (
     <Container>
       <Wrapper>
@@ -89,11 +89,11 @@ function HomeItem() {
             <LeftContent.Box>
               <LeftContent.Box.Left>
                 <Title>
-                  {data?.description || "Luxury Family Loft by Victoria Park"}
+                  {data?.name || "{Home's name}"}
                 </Title>
                 <Desc>
-                  {data?.address || "Quincy St"},{data?.city || "Brooklyn, NY"},
-                  {data?.country || "USA"}-{data?.category?.name}
+                  {data?.address || "{home address}"},{data?.city || "{city}"},
+                  {data?.country || "{country}"}-{data?.category?.name}
                 </Desc>
                 <Details>
                   <DetailsItem>

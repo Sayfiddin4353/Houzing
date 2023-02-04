@@ -40,10 +40,10 @@ const Container = styled.input`
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   line-height: 20px;
   color: #0d263b;
-  width: ${({ width }) => (width ? `${width}px` : "100%")};
+  width: ${({ width }) => (width ? `${width}px` : "100% ")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   padding-left: ${({ icon }) => (icon ? "45px" : "20px")};
-  margin-bottom:${({mb})=>mb?`${mb}px`:"0px"};
+  margin-bottom: ${({ mb }) => (mb ? `${mb}px` : "0px")};
   /* ${getType}; */
   ::placeholder {
     font-style: normal;
@@ -58,6 +58,7 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 `;
 const Icon = styled.div`
   position: absolute;

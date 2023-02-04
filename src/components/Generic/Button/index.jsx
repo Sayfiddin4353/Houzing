@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from './style'
 
-const Button = ({children,type,width,height,onClickProp,}) => {
+const Button = ({children,type,width,height,onClickProp,disabled}) => {
   return (
-    <Container onClick={onClickProp} type={type} width={width} height={height}   >
+    <Container disabled={disabled} onClick={onClickProp} type={type} width={width} height={height}   >
         {children||" Generic button"}
     </Container>
   )

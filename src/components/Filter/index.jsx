@@ -93,8 +93,7 @@ const Filter = () => {
         <Input
           ref={roomsRef}
           name="room"
-          defaultValue={query.get("room")}
-          width={200}
+          defaultValue={query.get("room")}         
           placeholder={"Rooms"}
           onChangeProp={onChange}
         />

@@ -57,7 +57,7 @@ const HouseCard = ({ data = {}, gap, onClick }) => {
         </Title>
         <DescPargraph className="desc_info">
           {address || "Quincy St, Brooklyn, NY, USA"}-
-          {category?.name || "Category"} {houseDetails?.room || 0}-rooms
+          {category?.name || "Category name"} {houseDetails?.room || 0}-rooms
         </DescPargraph>
         <Details>
           <DetailsItem>

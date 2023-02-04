@@ -23,9 +23,12 @@ Header.Title = styled.h1`
   color: #0d263b;
   margin: 0px;
 `;
-Header.Search = styled.div`
-  width: 250px;
+
+Header.Add = styled.div`
+  max-width: 180px;
+  width: 100%;
 `;
+
 const Product = styled.div`
   background: #ffffff;
   border: 1px solid #e6e9ec;
@@ -61,6 +64,11 @@ Icon.Edit = styled(edit)`
   :active {
     transform: scale(0.85);
   }
+  :hover{
+    & path{
+      fill: blue;
+    }
+  }
 `;
 Icon.Delete = styled(del)`
   width: 35px;
@@ -72,6 +80,12 @@ Icon.Delete = styled(del)`
   :active {
     transform: scale(0.85);
   }
+  :hover{
+    & path{
+      fill: red;
+    }
+  }
+
 `;
 
 const Box = styled.div`
@@ -81,6 +95,7 @@ const Box = styled.div`
 const ImgCard = styled.div`
   width: 113px;
   height: 113px;
+  cursor: pointer;
 `;
 ImgCard.Img = styled.img`
   width: 100%;
@@ -124,7 +139,7 @@ Info.Price = styled.p`
   margin: 0;
 `;
 
-const Button = styled.button`
+const ButtonProduct = styled.button`
   width: 71px;
   height: 23px;
   text-align: center;
@@ -142,19 +157,20 @@ const Button = styled.button`
     transform: scale(0.95);
   }
 `;
-const Text = styled.h1`
 
+const Text = styled.h2`
   font-style: normal;
   font-weight: 600;
-  font-size: 26px;
-  line-height: 24px;
-  color: #0d263b;
+  font-size: 24px;
+  line-height: 28px;
+  color: #e73c3c;
+  margin: 20px 0px;
   text-align: center;
-  background-color:red;
 `;
 
 export {
-  Button,
+  Text,
+  ButtonProduct,
   Container,
   Wrapper,
   Header,
@@ -167,5 +183,4 @@ export {
   Box,
   ImgCard,
   Info,
-  Text
 };

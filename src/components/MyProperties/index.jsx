@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Container,
   Header,
@@ -12,33 +12,59 @@ import {
   Box,
   ImgCard,
   Info,
-  Button,
+  ButtonProduct,
+  Text,
 } from "./style";
-import { Input } from "../Generic";
-import { useEffect } from "react";
-import Noimg from "../../assets/images/noimg.png";
 
+import Noimg from "../../assets/images/noimg.png";
+import { Button } from "../Generic";
+import { useNavigate } from "react-router-dom";
+import { memo } from "react";
+import { useQuery } from "react-query";
+import { message } from "antd";
 const { REACT_APP_BASE_URL: url } = process.env;
+
 const MyProperties = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch(`${url}/houses/me`, {
+  const navigate = useNavigate();
+  const { refetch, data } = useQuery([], async () => {
+    const res = await fetch(`${url}/houses/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
+    });
+    return res.json();
+  });
+
+  const onDelete = (id) => {
+    fetch(`${url}/houses/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
     })
       .then((res) => res.json())
-      .then((res) => setData(res?.data || []));
-  }, []);
+      .then((res) => {
+        if (res?.success) {
+          message.info("Successfully deleted");
+          refetch();
+        }
+      });
+  };
 
   return (
     <Container>
       <Wrapper>
         <Header>
           <Header.Title> My properties</Header.Title>
-          <Header.Search>
-            <Input placeholder="Search" />
-          </Header.Search>
+          <Header.Add>
+            <Button
+              width={"100%"}
+              onClickProp={() => navigate("/myproperties/addproperties")}
+            >
+              Add New House
+            </Button>
+          </Header.Add>
         </Header>
         <Product>
           <Table>
@@ -51,16 +77,16 @@ const MyProperties = () => {
                 <Th style={{ width: "100px" }}>Action</Th>
               </Tr>
             </Table.Head>
-
             <Table.Body>
-              {data.map((item) => {
+              {data?.data?.map((item) => {
                 return (
                   <Tr key={item.id}>
                     <Td>
                       <Box>
                         <ImgCard>
                           <ImgCard.Img
-                            src={item?.attachments[0].imgPath || Noimg}
+                           onClick={()=>navigate(`/properties/${item.id}`)}
+                            src={item?.attachments[0]?.imgPath || Noimg}
                           />
                         </ImgCard>
                         <Info>
@@ -75,7 +101,7 @@ const MyProperties = () => {
                           </Info.SaleP>
                           <Info.Price>${item?.price}</Info.Price>
                         </Info>
-                        <Button>For Sale</Button>
+                        <ButtonProduct>For Sale</ButtonProduct>
                       </Box>
                     </Td>
                     <Td center>{item?.houseDetails?.yearBuilt}</Td>
@@ -84,8 +110,8 @@ const MyProperties = () => {
                     <Td center>
                       <Icon>
                         {" "}
-                        <Icon.Edit />
-                        <Icon.Delete />
+                        <Icon.Edit onClick={()=>navigate(`/myproperties/edithouse/${item?.id}`)} />
+                        <Icon.Delete onClick={() => onDelete(item?.id)} />
                       </Icon>
                     </Td>
                   </Tr>
@@ -93,10 +119,11 @@ const MyProperties = () => {
               })}
             </Table.Body>
           </Table>
+          {data?.data?.length === undefined && <Text>Not data found</Text>}
         </Product>
       </Wrapper>
     </Container>
   );
 };
 
-export default MyProperties;
+export default memo(MyProperties);

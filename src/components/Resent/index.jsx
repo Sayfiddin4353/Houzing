@@ -12,18 +12,44 @@ import Slider from "react-slick";
 import HouseCard from "../HouseCard";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { memo } from "react";
 const { REACT_APP_BASE_URL: url } = process.env;
 const settings = {
-  className: "center",
-  centerMode: true,
-  infinite: true,
-  centerPadding: "20px",
+  slidesToScroll: 1,
+  initialSlide: 0,
+  infinite: false,
   slidesToShow: 3,
   speed: 400,
   dots: false,
   arrows: false,
-  adaptiveHeight: true,
+  adaptiveHeight: true,  
   appenDots: (dots) => <h1>{dots}</h1>,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const Resent = () => {
@@ -54,7 +80,7 @@ const Resent = () => {
         </Container.Desc>
         <Slider {...settings} ref={silderRef}>
           {data?.map((item) => {
-            return <HouseCard gap={10} key={item.id} data={item} onClick={()=>navigate(`/properties/${item.id}`)} />;
+            return <HouseCard  key={item.id} data={item} onClick={()=>navigate(`/properties/${item.id}`)} />;
           })}
         </Slider>
       </Wrapper>
@@ -68,4 +94,4 @@ const Resent = () => {
   );
 };
 
-export default Resent;
+export default memo(Resent) ;

@@ -24,8 +24,8 @@ const GenCarousel = () => {
   const onMove = ({
     target: {
       dataset: { name },
-    },
-  }) => {
+    }
+  }) => {   
     if (name === "right") slider.current.next();
     if (name === "left") slider.current.prev();
   };
@@ -39,7 +39,7 @@ const GenCarousel = () => {
         <ImgCarousel src={img4} />
       </Carousel>
       <Blur />
-    
+
       <ArrowContainer>
         <ArrowWrapper>
           <ArrowLeft data-name="left" onClick={onMove} />
