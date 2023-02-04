@@ -53,33 +53,47 @@ function HomeItem() {
           });
         });
   }, [params?.id]);
-  
+
   return (
     <Container>
       <Wrapper>
         <ImgContent>
           <ImgContent.Left>
-            <ProductImgLeft src={data?.attachments?.[0]?.imgPath || Noimg} />
+            <ProductImgLeft
+              src={
+                data?.attachments?.[0]?.imgPath === "string"
+                  ? Noimg
+                  : data?.attachments?.[0]?.imgPath
+              }
+            />
           </ImgContent.Left>
           <ImgContent.Right>
             <ProductImgRight>
               <ProductImgRight.Img
-                src={data?.attachments?.[0]?.imgPath || Noimg}
+                src={ data?.attachments?.[0]?.imgPath === "string"
+                ? Noimg
+                : data?.attachments?.[0]?.imgPath}
               />
             </ProductImgRight>
             <ProductImgRight>
               <ProductImgRight.Img
-                src={data?.attachments?.[0]?.imgPath || Noimg}
+                src={ data?.attachments?.[0]?.imgPath === "string"
+                ? Noimg
+                : data?.attachments?.[0]?.imgPath}
               />
             </ProductImgRight>
             <ProductImgRight>
               <ProductImgRight.Img
-                src={data?.attachments?.[0]?.imgPath || Noimg}
+                src={ data?.attachments?.[0]?.imgPath === "string"
+                ? Noimg
+                : data?.attachments?.[0]?.imgPath}
               />
             </ProductImgRight>
             <ProductImgRight>
               <ProductImgRight.Img
-                src={data?.attachments?.[0]?.imgPath || Noimg}
+                src={ data?.attachments?.[0]?.imgPath === "string"
+                ? Noimg
+                : data?.attachments?.[0]?.imgPath}
               />
             </ProductImgRight>
           </ImgContent.Right>
@@ -88,9 +102,7 @@ function HomeItem() {
           <LeftContent>
             <LeftContent.Box>
               <LeftContent.Box.Left>
-                <Title>
-                  {data?.name || "{Home's name}"}
-                </Title>
+                <Title>{data?.name || "{Home's name}"}</Title>
                 <Desc>
                   {data?.address || "{home address}"},{data?.city || "{city}"},
                   {data?.country || "{country}"}-{data?.category?.name}

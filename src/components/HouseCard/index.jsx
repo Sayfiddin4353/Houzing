@@ -50,7 +50,7 @@ const HouseCard = ({ data = {}, gap, onClick }) => {
   };
   return (
     <Container gap={gap} onClick={onClick}>
-      <Image src={attachments?.[0]?.imgPath || Noimg} />
+      <Image src={attachments?.[0]?.imgPath===("string")?Noimg:attachments?.[0]?.imgPath} />
       <DescWrapper>
         <Title className="subtitle inline">
           {(city, country, description) || "No Information"}
