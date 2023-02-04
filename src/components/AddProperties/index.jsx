@@ -41,10 +41,10 @@ const AddProperties = () => {
     fetch(`${url}/categories/list`)
       .then((res) => res.json())
       .then((res) => setCategory(res?.data || []));
-  }, []);
+  }, [url]);
 
   useEffect(() => {
-    id &&
+    
       fetch(`${url}/houses/id/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -55,7 +55,7 @@ const AddProperties = () => {
           setImgs(res?.data?.attachments);
           setInitial(res?.data || {});
         });
-  }, []);
+  }, [url,id]);
 
   const formik = useFormik({
     initialValues: initial,
