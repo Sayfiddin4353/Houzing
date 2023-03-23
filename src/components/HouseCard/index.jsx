@@ -33,7 +33,6 @@ const HouseCard = ({ data = {}, gap, onClick }) => {
     favorite,
   } = data;
   const [state] = useContext(PropertiesContext);
-
   const onFavourite = (e) => {
     e.stopPropagation();
     fetch(`${url}/houses/addFavourite/${id}?favourite=${!favorite}`, {
