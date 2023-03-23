@@ -21,7 +21,7 @@ const Signup = () => {
   };
 
   const onSelect = () => {
-    fetch("https://houzing-app.herokuapp.com/api/public/auth/register", {
+    fetch("http://158.51.99.245:8081/api/public/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

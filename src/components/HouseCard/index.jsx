@@ -18,6 +18,7 @@ import { PropertiesContext } from "../../context/properties";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 const HouseCard = ({ data = {}, gap, onClick }) => {
+ 
   const {
     id,
     address,

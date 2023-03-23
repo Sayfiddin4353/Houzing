@@ -23,7 +23,7 @@ const Signin = () => {
 
   const onSelect = () => {
     setisLoad(true);
-    fetch("https://houzing-app.herokuapp.com/api/public/auth/login", {
+    fetch("http://158.51.99.245:8081/api/public/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
