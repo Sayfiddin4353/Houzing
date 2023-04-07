@@ -20,6 +20,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const AddProperties = () => {
   const { REACT_APP_BASE_URL: url } = process.env;
   const [category, setCategory] = useState([]);
+  console.log(category);
   const [valueDefault] = useState("Select Category");
   const [imgs, setImgs] = useState([]);
   const [photo, setPhoto] = useState("");
