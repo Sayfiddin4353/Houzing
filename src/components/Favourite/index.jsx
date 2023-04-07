@@ -38,8 +38,8 @@ const Favourite = () => {
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </Container.Desc>
       <Wrapper>
-        {data?.data.length > 0 ? (
-          data?.data.map((value) => {
+        {data?.data?.length > 0 ? (
+          data?.data?.map((value) => {
             return (
               <HouseCard
                 onClick={() => onSelect(value.id)}
